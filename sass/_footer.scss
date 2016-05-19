@@ -1,0 +1,132 @@
+
+footer{
+    
+    @extend .content;
+    @include gap(margin-top, 0.83);
+    text-align: left;
+    
+    .footer-info{
+        display: flex;
+        justify-content: space-between;
+        
+        article{
+            width:17%;
+        }
+        article:last-child{
+            width:22%;
+        }
+        
+        blockquote{
+            margin:0;
+        }
+        
+        p{
+            margin: 0.6em 0;
+            color: #BFBFBF;
+            line-height: 180%;
+        }
+        
+        .tweet-time{
+            color: #DBDBDB;
+        }
+        
+        .subscribe-form{
+            margin-top:20px;
+            font-size: 1.2rem;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .email-input{
+            font-size: 1.2rem;
+            @include email-input(165px, 48px);
+        }
+        
+        .subscribe-button{
+            @include subscribe-button(15px, 48px);
+        }
+        
+    }//footer-info
+    
+    
+    .footer-copyright{
+        
+        margin-top: 100px;
+        padding:11px 0px;
+        display:flex;
+        justify-content: space-between;
+        border-top: 1px #E3E3E3 solid;
+        
+        .copyright{
+            color: #A3A3A3;
+            line-height: 35px;
+        }
+            
+        .navigation{
+            
+            a {
+                color: #000000;
+                font-weight: 300;
+            }
+            
+            li {
+                padding: 20px;
+            }
+        } //navigation  
+    } //footer-copyright  
+} //footer
+
+@media only screen and (max-width: $laptop-breakpoint) {
+    footer{
+
+        .footer-info{
+            flex-wrap: wrap;
+            justify-content: center;
+            padding:0 7%;
+            
+            article {
+                width: 285px !important;; //!important cause article:last-child has different default width
+                margin: 0 20px;
+            }
+            
+        }
+        
+        .footer-copyright{
+            padding:0 20px;
+        }
+    } //footer 
+} 
+
+
+
+@media only screen and (max-width: $tablet-breakpoint) {
+    footer{  
+        
+        .footer-info{
+            justify-content: flex-start;
+            
+            article{
+                width: 100% !important; 
+            }
+        }
+        
+        .footer-copyright{      
+                padding-top: 70px; 
+                text-align:center;
+                flex-direction: column-reverse;
+                
+            .navigation{
+                flex-direction: column;
+                padding: 0;
+                li {
+                    padding: 20px 5%;
+                }
+            }
+        } //footer-copyright
+    } //footer
+} 
+
+
+@media only screen and (max-width: $phone-breakpoint) {
+    
+}
